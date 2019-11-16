@@ -1,8 +1,25 @@
 #!/usr/local/bin/python3
 
+#    _____  _____
+#   |  __ \|  __ \    AUTHOR: Pedro Rivero
+#   | |__) | |__) |   ---------------------------------
+#   |  ___/|  _  /    DATE: November 16, 2019
+#   | |    | | \ \    ---------------------------------
+#   |_|    |_|  \_\   https://github.com/pedrorrivero
+#
+
+# ---------------------------------------- #
+#                LIBRARIES                 #
+# ---------------------------------------- #
+
 import secrets
 import pyperclip
 from argparse import ArgumentParser	# To input flags along with the command
+
+
+# ---------------------------------------- #
+#                  PARSER                  #
+# ---------------------------------------- #
 
 parser = ArgumentParser(description="generate cryptographically secure password ".upper() + "(default: copy to clipboard)")
 parser.add_argument("-n", "--not-copy", action="store_true", dest="not_copy", default=False,
@@ -13,13 +30,19 @@ parser.add_argument("-v", "--verbose", action="store_true", dest="verbose", defa
 			help="ask before copy to clipboard and print in hidden format")
 options = parser.parse_args()
 
-## SECURE PASSWORD GENERATION ##
+
+# ---------------------------------------- #
+#        SECURE PASSWORD GENERATION        #
+# ---------------------------------------- #
 
 characters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!?.,;:-+/*=()[]<>%@#$&"
 passlen = 40
 password="".join(secrets.choice(characters) for i in range(passlen))
 
-## OUTPUT AND INTERFACE ##
+
+# ---------------------------------------- #
+#           OUTPUT AND INTERFACE           #
+# ---------------------------------------- #
 
 if options.not_copy: reply = 'n'
 else: reply = 'y'
