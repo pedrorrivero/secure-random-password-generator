@@ -1,0 +1,28 @@
+#!/usr/local/bin/bash
+
+#    _____  _____
+#   |  __ \|  __ \    AUTHOR: Pedro Rivero
+#   | |__) | |__) |   ---------------------------------
+#   |  ___/|  _  /    DATE: November 16, 2019
+#   | |    | | \ \    ---------------------------------
+#   |_|    |_|  \_\   https://github.com/pedrorrivero
+#
+
+# ---------------------------------------- #
+#            NAMING AND SET-UP             #
+# ---------------------------------------- #
+
+BIN_NAME='ranpass'
+BIN_EXTENSION='py'
+INSTALLATION_LOCATION='/usr/local/bin'
+
+BIN_PATH="${INSTALLATION_LOCATION}/${BIN_NAME}"
+
+
+# ---------------------------------------- #
+#                UNINSTALL                 #
+# ---------------------------------------- #
+
+rm -rf "${BIN_PATH}" 2>/dev/null
+
+echo "Succesful uninstall of ${BIN_NAME}!"
