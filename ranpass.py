@@ -35,7 +35,7 @@ options = parser.parse_args()
 #        SECURE PASSWORD GENERATION        #
 # ---------------------------------------- #
 
-characters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!?.,;:-+/*=()[]<>%@#$&"
+characters = "abcdefghijklmnopqrstuvwxyz0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ!?.,;:-+/*=()[]{}<>%@#$&|'"
 passlen = 40
 password="".join(secrets.choice(characters) for i in range(passlen))
 
